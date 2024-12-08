@@ -6,7 +6,10 @@
 <a href="https://weichow23.github.io/CrossLink/"><img src="https://img.shields.io/badge/website-gold" alt="project website"></a>
 <a href="https://huggingface.co/MeissonFlow/Meissonic">
     <img src="https://img.shields.io/badge/🤗-Model-blue.svg"></a>
+<a href="https://huggingface.co/WeiChow/DyGraphs">
+    <img src="https://img.shields.io/badge/🤗-Dataset-green.svg"></a>
 </div>
+
 
 ## 🚀 Introduction
 
@@ -19,11 +22,23 @@ It employs a technique called *conditioned link generation*, which integrates bo
 
 #### Environment
 
-
+```shell
+conda create -n your_env_name python=3.8
+conda activate crosslink
+pip install -r requirements.txt
+```
 
 #### Dataset
 
+Please keep the dataset in the fellow format:
 
+| Unnamed: 0 | u             | i             | ts                 | label        | idx                    |
+| ---------- | ------------- | ------------- | ------------------ | ------------ | ---------------------- |
+| `idx-1`    | `source node` | `target node` | `interaction time` | `defalut: 0` | `from 1 to the #edges` |
+
+You can prepare those data by the code in `preprocess_data` folder
+
+You can also use our precessed data in [huggingface](https://huggingface.co/datasets/WeiChow/DyGraphs) 
 
 ## 💡 Usage
 
@@ -39,6 +54,10 @@ It employs a technique called *conditioned link generation*, which integrates bo
 
 - [ ]  Release evaluation code and checkpoint
 - [ ]  Release training code
+
+## 💞 Acknowledgment
+
+Our code is built refer to [DyGLib](https://github.com/yule-BUAA/DyGLib)
 
 ## 📚 Citation
 
